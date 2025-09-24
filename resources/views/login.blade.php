@@ -11,7 +11,7 @@
         function togglePassword() {
             const passwordInput = document.getElementById('password');
             const toggleIcon = document.getElementById('passwordToggleIcon');
-            
+
             if (passwordInput.type === 'password') {
                 passwordInput.type = 'text';
                 toggleIcon.classList.remove('fa-eye');
@@ -30,7 +30,16 @@
             <h1 class="text-3xl font-bold text-gray-800">Login</h1>
         </div>
 
-        <form action="" method="POST" class="space-y-6">
+        @if ($errors->any())
+            <x-alert type="error" :message="$errors->first()" />
+        @endif
+
+        @if (session('success'))
+            <x-alert type="success" :message="session('success')" />
+        @endif
+
+        <form action="{{ route('login') }}" method="POST" class="space-y-6">
+            @csrf
             <div>
                 <label for="email" class="block text-sm font-medium text-gray-700 mb-4">
                     <i class="fas fa-envelope mr-2"></i>Email
@@ -47,7 +56,7 @@
                     <input type="password" name="password" id="password" required
                     class="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
                     placeholder="masukan password . . .">
-                    <button type="button" onclick="togglePassword()" 
+                    <button type="button" onclick="togglePassword()"
                     class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none">
                         <i id="passwordToggleIcon" class="fas fa-eye"></i>
                     </button>
@@ -55,7 +64,7 @@
             </div>
 
             <div class="flex justify-center">
-                <x-button type="submit">
+                <x-button type="submit" color="blue">
                     Login
                 </x-button>
             </div>
