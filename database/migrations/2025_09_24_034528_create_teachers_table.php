@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('kelas_id')->constrained()->onDelete('cascade');
             $table->string('nama');
             $table->string('mapel');
-            $table->enum('jenis_kelamin', ['Laki laki', 'perempuan']);
+            $table->enum('jenis_kelamin', ['L', 'P']);
             $table->timestamps();
         });
     }
