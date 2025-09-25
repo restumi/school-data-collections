@@ -27,12 +27,12 @@ class AuthController extends Controller
 
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/dashboard')->with('success', 'Login sucess!');
         };
 
         return back()->withErrors([
             'email' => 'email atau password salah'
-        ]);
+        ])->withInput();
     }
 
     public function logout(Request $request)
