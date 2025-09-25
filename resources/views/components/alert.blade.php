@@ -1,6 +1,7 @@
 @props([
     'type' => 'info',
-    'message' => ''
+    'message' => '',
+    'errors' => null
 ])
 
 @php
@@ -17,5 +18,15 @@
 @if ($message)
     <div class="{{ $baseClasses }} {{ $types[$type] ?? $types['info'] }}">
         {{ $message }}
+    </div>
+@endif
+
+@if ($errors && $errors->any())
+    <div class="{{ $baseClasses }} {{ $types['error'] }}">
+        <ul class="list-disc list-inside">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
     </div>
 @endif

@@ -19,7 +19,16 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('kelas', KelasController::class);
+    // Route::resource('kelas', KelasController::class);
+
+    Route::get('/kelas', [KelasController::class, 'index'])->name('kelas.index');
+    Route::get('/kelas/create', [KelasController::class, 'create'])->name('kelas.create');
+    Route::post('/kelas', [KelasController::class, 'store'])->name('kelas.store');
+    Route::get('/kelas/{kelas}', [KelasController::class, 'show'])->name('kelas.show');
+    Route::get('/kelas/{kelas}/edit', [KelasController::class, 'edit'])->name('kelas.edit');
+    Route::put('/kelas/{kelas}', [KelasController::class, 'update'])->name('kelas.update');
+    Route::delete('/kelas/{kelas}', [KelasController::class, 'destroy'])->name('kelas.destroy');
+
     Route::resource('student', StudentController::class);
     Route::resource('teacher', TeacherController::class);
 });

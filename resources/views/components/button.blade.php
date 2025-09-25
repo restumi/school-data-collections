@@ -4,7 +4,8 @@
     $Colors = [
         'blue' => 'bg-blue-600 hover:bg-blue-700 active:bg-blue-900 ring-blue-300',
         'red' => 'bg-red-600 hover:bg-red-700 active:bg-red-900 ring-red-300',
-        'green' => 'bg-green-600 hover:bg-green-700 active:bg-green-900 ring-green-300'
+        'green' => 'bg-green-600 hover:bg-green-700 active:bg-green-900 ring-green-300',
+        'yellow' => 'bg-yellow-600 hover:bg-yellow-700 active:bg-yellow-900 ring-yellow-300'
     ];
 @endphp
 

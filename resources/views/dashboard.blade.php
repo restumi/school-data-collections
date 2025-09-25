@@ -22,7 +22,7 @@
         <!-- Main Content -->
         <main class="flex-grow container mx-auto p-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <a href="" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                <a href="{{ route('kelas.index') }}" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
                     <h2 class="text-xl font-semibold text-gray-800">Manage Kelas</h2>
                     <p class="text-gray-600">CRUD Kelas</p>
                 </a>
