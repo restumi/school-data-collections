@@ -26,11 +26,11 @@
                     <h2 class="text-xl font-semibold text-gray-800">Manage Kelas</h2>
                     <p class="text-gray-600">CRUD Kelas</p>
                 </a>
-                <a href="" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                <a href="{{ route('students.index') }}" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
                     <h2 class="text-xl font-semibold text-gray-800">Manage Strudents</h2>
                     <p class="text-gray-600">CRUD Students</p>
                 </a>
-                <a href="" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                <a href="{{ route('teachers.index') }}" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
                     <h2 class="text-xl font-semibold text-gray-800">Manage Teachers</h2>
                     <p class="text-gray-600">CRUD Teacher</p>
                 </a>

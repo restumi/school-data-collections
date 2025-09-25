@@ -29,6 +29,6 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/kelas/{kelas}', [KelasController::class, 'update'])->name('kelas.update');
     Route::delete('/kelas/{kelas}', [KelasController::class, 'destroy'])->name('kelas.destroy');
 
-    Route::resource('student', StudentController::class);
-    Route::resource('teacher', TeacherController::class);
+    Route::resource('students', StudentController::class);
+    Route::resource('teachers', TeacherController::class);
 });

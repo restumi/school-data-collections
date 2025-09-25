@@ -12,6 +12,6 @@ class Student extends Model
     protected $guarded = [];
 
     public function kelas(){
-        return $this->belongsTo(Kelas::class);
+        return $this->belongsTo(Kelas::class, 'kelas_id');
     }
 }

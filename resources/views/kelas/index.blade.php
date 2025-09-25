@@ -8,6 +8,8 @@
             <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No</th>
             <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name Class</th>
             <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Add Student</th>
+            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Add Teacher</th>
         </tr>
     </thead>
     <tbody class="divide-y divide-gray-200">
@@ -28,6 +30,20 @@
                             <i class="fas fa-trash mr-1"></i>Delete
                         </x-button>
                     </form>
+                </td>
+                <td class="px-4 py-4 text-sm text-gray-900">
+                    <a href="{{ route('students.create', ['kelas_id' => $k->id]) }}">
+                        <x-button color="blue" class="!px-3 !py-1 !text-xs">
+                            <i class="fas fa-plus mr-1"></i>Add Student
+                        </x-button>
+                    </a>
+                </td>
+                <td class="px-4 py-4 text-sm text-gray-900">
+                    <a href="{{ route('teachers.create', ['kelas_id' => $k->id]) }}">
+                        <x-button color="blue" class="!px-3 !py-1 !text-xs">
+                            <i class="fas fa-plus mr-1"></i>Add Teacher
+                        </x-button>
+                    </a>
                 </td>
             </tr>
         @empty
